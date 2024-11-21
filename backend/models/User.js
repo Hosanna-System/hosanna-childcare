@@ -5,12 +5,16 @@ const userSchema = new mongoose.Schema(
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    profilePic: { type: String, required: false },
+    profilePicture: { type: String, default: "" },
     role: {
       type: String,
-      enum: ["parent", "monitor", "admin"],
+      enum: ["parent", "monitor", "admin", "superadmin"],
       default: "parent",
-    },
+    }, // Ajout du rôle superadmin
+    childcareCenterId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "ChildcareCenter",
+    }, // Association avec un centre
   },
   {
     timestamps: true,

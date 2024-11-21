@@ -1,0 +1,6 @@
+{
+    "port": 5000,
+    "jwtSecret": "monSecretJWT",
+    "mongoURI": "mongodb://localhost:27017/garderie",
+    "clientURL": "http://localhost:3000"
+}
