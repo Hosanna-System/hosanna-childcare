@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { getUsers } from '../services/api';
+import { getUsers } from '../../services/api';
 import { useNavigate } from 'react-router-dom';
 
-const AdminDashboard: React.FC = () => {
+const AdminDashboardPage: React.FC = () => {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
@@ -56,4 +56,4 @@ const AdminDashboard: React.FC = () => {
     );
 };
 
-export default AdminDashboard;
+export default AdminDashboardPage;

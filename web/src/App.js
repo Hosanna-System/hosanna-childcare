@@ -3,26 +3,25 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import AdminDashboard from './pages/AdminDashboard';
-import ProtectedRoute from './components/ProtectedRoute'; // Assurez-vous que le chemin est correct
-import logo from './logo.svg';
-import './App.css';
+import ProtectedRoute from './ProtectedRoute'; // Assurez-vous que le chemin est correct
+import RoleBasedRedirect from './RoleBasedRedirect';
+import NotFoundPage from './pages/NotFoundPage';
+import AccessDeniedPage from './pages/AccessDeniedPage';
+import { useAuth } from './contexts/AuthContext'; // Assurez-vous que le chemin est correct
 
 function App() {
-  const isAuthenticated = true; // Remplacez ceci par votre logique d'authentification
-
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route
+        <ProtectedRoute path="/admin" element={<AdminDashboard />} />
+        <RoleBasedRedirect
           path="/admin"
-          element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <AdminDashboard />
-            </ProtectedRoute>
-          }
+          element={<AccessDeniedPage />}
+          requiredRole="admin"
         />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );

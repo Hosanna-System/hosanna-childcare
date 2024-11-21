@@ -1,3 +1,7 @@
+// Page pour se connecter (tous les rôles).
+// On peut entrer son adresse email et son mot de passe pour se connecter.
+// On peut aussi aller à la page de réinitialisation de mot de passe.
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../services/api.js';
@@ -15,7 +19,7 @@ const LoginPage: React.FC = () => {
         try {
             const user = await login({ email, password });
             setUser(user);
-            navigate('/dashboard');
+            navigate('/');
         } catch (err) {
             setError('Invalid email or password');
         }

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 interface AuthContextType {
     user: any;
@@ -7,8 +7,12 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType>({ user: null, setUser: () => {} });
 
-export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
+interface AuthProviderProps {
+    children: ReactNode;
+}
+
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+    const [user, setUser] = useState<any>(null);
 
     return (
         <AuthContext.Provider value={{ user, setUser }}>
