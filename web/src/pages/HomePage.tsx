@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
     return (
@@ -8,6 +9,7 @@ const HomePage = () => {
             <Button variant="contained" color="primary">
                 Commencer
             </Button>
+            <Link to="/login">Se connecter</Link>
         </div>
     );
 };

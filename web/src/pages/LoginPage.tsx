@@ -6,6 +6,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../services/api.js';
 import { useAuth } from '../contexts/AuthContext.tsx';
+import { Link } from 'react-router-dom';
+import LoginForm from '../components/forms/LoginForm.tsx';
+import './LoginPage.css';
 
 const LoginPage: React.FC = () => {
     const [email, setEmail] = useState('');
@@ -27,29 +30,15 @@ const LoginPage: React.FC = () => {
 
     return (
         <div>
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Email:</label>
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </div>
-                {error && <p>{error}</p>}
-                <button type="submit">Login</button>
-            </form>
+            <LoginForm
+                email={email}
+                setEmail={setEmail}
+                password={password}
+                setPassword={setPassword}
+                handleSubmit={handleSubmit}
+                error={error}
+            />
+            <Link to="/forgot-password">Forgot password?</Link>
         </div>
     );
 };

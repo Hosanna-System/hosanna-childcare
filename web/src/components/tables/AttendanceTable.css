@@ -1,0 +1,32 @@
+/* AttendanceTable.css */
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendance-table th,
+.attendance-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.attendance-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.attendance-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.attendance-table tr:hover {
+    background-color: #ddd;
+}
+
+.attendance-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #4CAF50;
+    color: white;
+}

@@ -2,6 +2,7 @@ import { Types } from "mongoose";
 
 
 export interface IActivity extends Document {
+    id: Types.ObjectId;
     name: string;
     description?: string;
     startTime: string;

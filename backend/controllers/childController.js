@@ -27,7 +27,8 @@ exports.getChildById = async (req, res) => {
 // Create a new child
 exports.createChild = async (req, res) => {
     const child = new Child({
-        name: req.body.name,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
         age: req.body.age,
         parentId: req.body.parentId,
         allergies: req.body.allergies

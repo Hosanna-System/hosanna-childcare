@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 
 const childSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
+    id: { type: mongoose.Schema.Types.ObjectId, required: true },
+    firstname: { type: String, required: true },
+    lastname: { type: String, required: true },
     age: { type: Number, required: true },
     profilePic: { type: String, required: false },
     parentId: {

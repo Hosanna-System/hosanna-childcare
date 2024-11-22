@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
+import HomePage from './pages/HomePage.tsx';
+import LoginPage from './pages/LoginPage.tsx';
 import AdminDashboard from './pages/AdminDashboard';
-import ProtectedRoute from './ProtectedRoute'; // Assurez-vous que le chemin est correct
-import RoleBasedRedirect from './RoleBasedRedirect';
-import NotFoundPage from './pages/NotFoundPage';
-import AccessDeniedPage from './pages/AccessDeniedPage';
-import { useAuth } from './contexts/AuthContext'; // Assurez-vous que le chemin est correct
+import ProtectedRoute from './ProtectedRoute.tsx'; // Assurez-vous que le chemin est correct
+import RoleBasedRedirect from './RoleBasedRedirect.tsx';
+import NotFoundPage from './pages/NotFoundPage.tsx';
+import AccessDeniedPage from './pages/AccessDeniedPage.tsx';
+import { useAuth } from './contexts/AuthContext.tsx'; // Assurez-vous que le chemin est correct
 
 function App() {
   return (

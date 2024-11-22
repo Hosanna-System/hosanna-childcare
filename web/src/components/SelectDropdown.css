@@ -1,0 +1,36 @@
+/* SelectDropdown.css */
+
+.select-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+}
+
+.select-dropdown select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.select-dropdown::after {
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.select-dropdown select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.select-dropdown select option {
+    padding: 10px;
+}
