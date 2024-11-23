@@ -4,16 +4,20 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { RootState } from '../store';
-import { UserState } from '../store/user/types';
-import { useAuth } from '../contexts/AuthContext';
-import './Header.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../store/index';
+import { UserState } from '../types/types';
+import { logout } from '../store/userSlice';
+import '../assets/styles/Header.css';
 
 
 const Header: React.FC = () => {
     const user = useSelector<RootState, UserState>((state) => state.user);
-    const { logout } = useAuth();
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        dispatch(logout());
+    };
 
     return (
         <header className="header">
@@ -29,7 +33,7 @@ const Header: React.FC = () => {
                 {user.isLoggedIn ? (
                     <>
                         <span className="username">{user.username}</span>
-                        <button className="logout-button" onClick={logout}>
+                        <button className="logout-button" onClick={handleLogout}>
                             Logout
                         </button>
                     </>

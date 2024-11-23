@@ -5,7 +5,7 @@ import { getChildById, getAllChildren } from '../../services/childrenEndpoints';
 import { IAbsence } from '../../types/IAbsence';
 import { IChild } from '../../types/IChild';
 import Loader from '../Loader';
-import './AttendanceTable.css';
+import '../../assets/styles/AttendanceTable.css';
 
 const AttendanceTable: React.FC = () => {
     const [absences, setAbsences] = useState<IAbsence[]>([]);

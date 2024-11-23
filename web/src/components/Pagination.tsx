@@ -1,7 +1,7 @@
 // Composant pour paginer les listes (exemple : gestion des utilisateurs).
 // -------------------------------------------------------------------
 import React from 'react';
-import './Pagination.css';
+import '../assets/styles/Pagination.css';
 
 interface PaginationProps {
     currentPage: number;

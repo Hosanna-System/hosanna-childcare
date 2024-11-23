@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { forgotPassword } from '../../services/api.js';
-import './ForgotPasswordForm.css';
+import { forgotPassword } from '../../services/authEndpoints';
+import '../../assets/styles/ForgotPasswordForm.css';
 
 
 const ForgotPasswordForm: React.FC = () => {

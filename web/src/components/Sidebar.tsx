@@ -2,7 +2,7 @@
 // -------------------------------------------------------------------
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Sidebar.css';
+import '../assets/styles/Sidebar.css';
 import { useAuth } from '../contexts/AuthContext';
 import { useSidebar } from '../contexts/SidebarContext';
 import { IconContext } from 'react-icons';

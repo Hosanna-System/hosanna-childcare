@@ -3,7 +3,7 @@
 import React, { InputHTMLAttributes } from 'react';
 import { useField } from 'formik';
 import { Input } from '@chakra-ui/react';
-import "./InputField.css";
+import "../assets/styles/InputField.css";
 
 type InputFieldProps = InputHTMLAttributes<HTMLInputElement> & {
     label: string;

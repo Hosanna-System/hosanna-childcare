@@ -1,7 +1,7 @@
 // Indicateur de chargement (spinner ou autre).
 // -------------------------------------------------------------------
 import React from 'react';
-import './Loader.css';
+import '../assets/styles/Loader.css';
 
 const Loader: React.FC = () => {
     return (

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { getActivities } from '../../services/activitiesEndpoints';
 import { IActivity } from '../../types/IActivity';
 import Loader from '../Loader';
-import './ActivityList.css';
+import '../../assets/styles/ActivityList.css';
 
 const ActivityList: React.FC = () => {
     const [activities, setActivities] = useState<IActivity[]>([]);

@@ -1,7 +1,7 @@
 // Menu déroulant pour sélectionner des options.
 // -------------------------------------------------------------------
 import React, { ChangeEvent } from 'react';
-import './SelectDropdown.css';
+import '../assets/styles/SelectDropdown.css';
 
 interface SelectDropdownProps {
     options: string[];

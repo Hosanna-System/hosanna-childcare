@@ -1,10 +1,6 @@
-// Formulaire de connexion.
-
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
-import './LoginForm.css';
-
+import '../../assets/styles/LoginForm.css';
 
 interface LoginFormProps {
     email: string;
@@ -39,7 +35,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ email, setEmail, password, setPas
                 />
             </div>
             {error && <p className="error">{error}</p>}
-            <button type="submit">Se connecter</button>
             <button type="submit">Se connecter</button>
             <Link to="/register">Pas encore de compte ?</Link>
         </form>
