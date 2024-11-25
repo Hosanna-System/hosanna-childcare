@@ -13,25 +13,25 @@
     align-items: center;
     justify-content: space-between;
     font-size: 16px;
-    color: #fff;
+    color: #FBF8F2;
 }
 
 .notification.success {
-    background-color: #28a745;
+    background-color: #BFA054;
 }
 
 .notification.error {
-    background-color: #dc3545;
+    background-color: #dc3545; /* No equivalent color in the provided CSS, keeping original */
 }
 
 .notification.info {
-    background-color: #17a2b8;
+    background-color: #2F2F2F;
 }
 
 .notification .close-btn {
     background: none;
     border: none;
-    color: #fff;
+    color: #FBF8F2;
     font-size: 20px;
     cursor: pointer;
 }

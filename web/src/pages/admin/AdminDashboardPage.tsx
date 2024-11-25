@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { getUsers } from '../../services/api';
+import { getUsers } from '../../services/userEndpoints';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext.tsx';
+import { Link } from 'react-router-dom';
+import Loader from '../../components/Loader.tsx';
+import '../../assets/styles/AdminDashboardPage.css';
+
 
 const AdminDashboardPage: React.FC = () => {
     const [users, setUsers] = useState([]);
@@ -28,7 +33,7 @@ const AdminDashboardPage: React.FC = () => {
     }, [navigate]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <Loader />;
     }
 
     return (

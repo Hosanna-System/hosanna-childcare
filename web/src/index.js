@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { NotificationProvider } from './contexts/notificationContext';
+import { NotificationProvider } from './contexts/notificationContext.tsx';
 import { Provider } from "react-redux";
-import store from "./store";
+import store from "./store/index.ts";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";

@@ -6,7 +6,7 @@
     left: 0;
     width: 250px;
     height: 100%;
-    background-color: #4d4d4d;
+    background-color: #BFA054; /* Adapted color */
     padding-top: 20px;
     transition: 0.3s;
     z-index: 1000;
@@ -22,7 +22,7 @@
     right: 20px;
     font-size: 24px;
     cursor: pointer;
-    color: #fff;
+    color: #FBF8F2; /* Adapted color */
 }
 
 .sidebar ul {
@@ -36,14 +36,14 @@
 }
 
 .sidebar ul li a {
-    color: #fff;
+    color: #FBF8F2; /* Adapted color */
     text-decoration: none;
     display: block;
     transition: 0.3s;
 }
 
 .sidebar ul li a:hover {
-    background-color: #575757;
+    background-color: #2F2F2F; /* Adapted color */
 }
 
 .sidebar ul li a .icon {
@@ -57,7 +57,7 @@
 .menu-icon {
     font-size: 24px;
     cursor: pointer;
-    color: #fff;
+    color: #FBF8F2; /* Adapted color */
     position: fixed;
     top: 15px;
     left: 20px;

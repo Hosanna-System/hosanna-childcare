@@ -1,0 +1,129 @@
+/* Base styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #2F2F2F;
+    background-color: #F5EFE1;
+}
+
+/* Container */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-bottom: 15px;
+}
+
+/* Header */
+.home-header {
+    text-align: center;
+    background-color: #BFA054;
+    color: #FBF8F2;
+    padding: 2rem;
+}
+
+.home-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.home-header p {
+    margin: 1rem 0 0;
+    font-size: 1.2rem;
+}
+
+/* Main content */
+.home-main {
+    flex: 1;
+    padding: 2rem;
+}
+
+.features {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.features h2 {
+    font-size: 2rem;
+    color: #2F2F2F;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    background-color: #FBF8F2;
+    border: 1px solid #858585;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #BFA054;
+}
+
+.card p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    color: #2F2F2F;
+}
+
+/* Call-to-action section */
+.cta {
+    text-align: center;
+    background-color: #2F2F2F;
+    color: #FBF8F2;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.cta h2 {
+    font-size: 2rem;
+}
+
+.cta p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.cta-buttons {
+    margin-top: 1rem;
+}
+
+.cta-buttons .btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+.cta-buttons .btn.primary {
+    background-color: #BFA054;
+    color: #FBF8F2;
+}
+
+.cta-buttons .btn.secondary {
+    background-color: #FBF8F2;
+    color: #BFA054;
+    border: 1px solid #BFA054;
+}
+
+/* Footer */
+.home-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #858585;
+    color: #FBF8F2;
+    font-size: 0.9rem;
+}

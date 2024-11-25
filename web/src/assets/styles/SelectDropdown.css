@@ -10,10 +10,11 @@
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #858585;
     border-radius: 4px;
     appearance: none;
-    background-color: #fff;
+    background-color: #FBF8F2;
+    color: #2F2F2F;
     cursor: pointer;
 }
 
@@ -24,13 +25,16 @@
     right: 10px;
     transform: translateY(-50%);
     pointer-events: none;
+    color: #2F2F2F;
 }
 
 .select-dropdown select:focus {
-    border-color: #007bff;
+    border-color: #BFA054;
     outline: none;
 }
 
 .select-dropdown select option {
     padding: 10px;
+    background-color: #FBF8F2;
+    color: #2F2F2F;
 }

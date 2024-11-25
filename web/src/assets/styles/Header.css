@@ -2,8 +2,8 @@
 
 /* Style de la barre de navigation principale */
 .header {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e0e0e0;
+    background-color: #FBF8F2;
+    border-bottom: 1px solid #BFA054;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -13,7 +13,7 @@
 .header .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #2F2F2F;
     text-decoration: none;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .header .nav-links a {
-    color: #333;
+    color: #2F2F2F;
     text-decoration: none;
     font-size: 16px;
 }
@@ -40,12 +40,12 @@
 
 .header .user-info .username {
     font-size: 16px;
-    color: #333;
+    color: #2F2F2F;
 }
 
 .header .user-info .logout-button {
-    background-color: #dc3545;
-    color: #fff;
+    background-color: #BFA054;
+    color: #FBF8F2;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
@@ -53,5 +53,5 @@
 }
 
 .header .user-info .logout-button:hover {
-    background-color: #c82333;
+    background-color: #A6894A;
 }

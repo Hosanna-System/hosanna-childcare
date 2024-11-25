@@ -4,11 +4,13 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login } from '../services/api.js';
+import { login } from '../services/authEndpoints.js';
 import { useAuth } from '../contexts/AuthContext.tsx';
 import { Link } from 'react-router-dom';
 import LoginForm from '../components/forms/LoginForm.tsx';
-import './LoginPage.css';
+import Header from '../components/Header.tsx';
+import Footer from '../components/Footer.tsx';
+import '../assets/styles/LoginPage.css';
 
 const LoginPage: React.FC = () => {
     const [email, setEmail] = useState('');
@@ -29,16 +31,20 @@ const LoginPage: React.FC = () => {
     };
 
     return (
-        <div>
-            <LoginForm
-                email={email}
-                setEmail={setEmail}
-                password={password}
-                setPassword={setPassword}
-                handleSubmit={handleSubmit}
-                error={error}
-            />
-            <Link to="/forgot-password">Forgot password?</Link>
+        <div className='home-container'>
+            <Header />
+            <div className='login-container'>
+                <LoginForm
+                    email={email}
+                    setEmail={setEmail}
+                    password={password}
+                    setPassword={setPassword}
+                    handleSubmit={handleSubmit}
+                    error={error}
+                />
+                <Link to="/forgot-password">Forgot password?</Link>
+            </div>
+            <Footer />
         </div>
     );
 };

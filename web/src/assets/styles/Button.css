@@ -5,8 +5,8 @@
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    color: #fff;
-    background-color: #007bff;
+    color: #FBF8F2;
+    background-color: #BFA054;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -14,11 +14,11 @@
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #A68A4A;
 }
 
 .btn:active {
-    background-color: #004085;
+    background-color: #8F7540;
 }
 
 .btn:disabled {

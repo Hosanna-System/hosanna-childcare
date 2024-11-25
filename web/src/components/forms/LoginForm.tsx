@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../assets/styles/LoginForm.css';
+import '../../assets/styles/LoginPage.css';
 
 interface LoginFormProps {
     email: string;
@@ -14,9 +15,9 @@ interface LoginFormProps {
 const LoginForm: React.FC<LoginFormProps> = ({ email, setEmail, password, setPassword, handleSubmit, error }) => {
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='login-form'>
             <h2>Connexion</h2>
-            <div>
+            <div className='form-group'>
                 <label htmlFor="email">Email</label>
                 <input
                     type="email"
@@ -25,7 +26,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ email, setEmail, password, setPas
                     onChange={(e) => setEmail(e.target.value)}
                 />
             </div>
-            <div>
+            <div className='form-group'>
                 <label htmlFor="password">Mot de passe</label>
                 <input
                     type="password"

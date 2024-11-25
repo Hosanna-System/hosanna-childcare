@@ -1,0 +1,64 @@
+/* Base styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #2F2F2F;
+    background-color: #F5EFE1;
+}
+
+/* Container */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-bottom: 15px;
+}
+
+/* Header */
+.about-header {
+    text-align: center;
+    background-color: #BFA054;
+    color: #FBF8F2;
+    padding: 2rem;
+}
+
+.about-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.about-header p {
+    margin: 1rem 0 0;
+    font-size: 1.2rem;
+}
+
+/* Main content */
+.about-main {
+    flex: 1;
+    padding: 2rem;
+}
+
+.about-content {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    color: #2F2F2F;
+}
+
+.about-content p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    color: #2F2F2F;
+}
+
+/* Footer */
+.about-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #858585;
+    color: #FBF8F2;
+    font-size: 0.9rem;
+}

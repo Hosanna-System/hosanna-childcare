@@ -5,9 +5,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../store/index';
-import { UserState } from '../types/types';
-import { logout } from '../store/userSlice';
+import { RootState } from '../store/index.ts';
+import { UserState } from '../types/types.ts';
+import { logout } from '../store/userSlice.ts';
 import '../assets/styles/Header.css';
 
 

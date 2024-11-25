@@ -6,7 +6,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    background-color: white;
+    background-color: #FBF8F2;
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -26,6 +26,7 @@
 .modal-title {
     font-size: 1.25rem;
     font-weight: bold;
+    color: #2F2F2F;
 }
 
 .modal-close {
@@ -33,10 +34,12 @@
     border: none;
     font-size: 1.25rem;
     cursor: pointer;
+    color: #2F2F2F;
 }
 
 .modal-body {
     margin-bottom: 20px;
+    color: #2F2F2F;
 }
 
 .modal-footer {
@@ -46,4 +49,16 @@
 
 .modal-footer button {
     margin-left: 10px;
+    background-color: #BFA054;
+    color: #FBF8F2;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-footer button.secondary {
+    background-color: #FBF8F2;
+    color: #BFA054;
+    border: 1px solid #BFA054;
 }

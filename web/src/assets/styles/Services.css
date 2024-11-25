@@ -1,0 +1,74 @@
+/* Base styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #2F2F2F;
+    background-color: #F5EFE1;
+}
+
+/* Container */
+.services-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-bottom: 15px;
+}
+
+/* Header */
+.services-header {
+    text-align: center;
+    background-color: #BFA054;
+    color: #FBF8F2;
+    padding: 2rem;
+}
+
+.services-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.services-header p {
+    margin: 1rem 0 0;
+    font-size: 1.2rem;
+}
+
+/* Main content */
+.services-main {
+    flex: 1;
+    padding: 2rem;
+}
+
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: #FBF8F2;
+    border: 1px solid #858585;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #BFA054;
+}
+
+.service-card p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    color: #2F2F2F;
+}
+
+/* Footer */
+.services-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #858585;
+    color: #FBF8F2;
+    font-size: 0.9rem;
+}
