@@ -1,5 +1,5 @@
-const jwt = require("jsonwebtoken");
-const User = require("../models/User");
+import jwt from "jsonwebtoken";
+import User from "../models/User.js";
 
 // Vérification de l'authentification
 const protect = async (req, res, next) => {
@@ -57,4 +57,4 @@ const isAdmin = (req, res, next) => {
   }
 };
 
-module.exports = { protect, isSuperAdmin, isAdmin, isParent, isMonitor };
+export { protect, isMonitor, isParent, isSuperAdmin, isAdmin };

@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
-const Absence = require("../models/Absence");
+import mongoose from "mongoose";
+import Absence from "../models/Absence.js";
 
 // Get all absences
-exports.getAllAbsences = async (req, res) => {
+export const getAllAbsences = async (req, res) => {
   try {
     const absences = await Absence.find().populate("childId");
     res.status(200).json(absences);
@@ -12,7 +12,7 @@ exports.getAllAbsences = async (req, res) => {
 };
 
 // Get a single absence by ID
-exports.getAbsenceById = async (req, res) => {
+export const getAbsenceById = async (req, res) => {
   try {
     const absence = await Absence.findById(req.params.id).populate("childId");
     if (!absence) {
@@ -25,7 +25,7 @@ exports.getAbsenceById = async (req, res) => {
 };
 
 // Create a new absence
-exports.createAbsence = async (req, res) => {
+export const createAbsence = async (req, res) => {
   const { childId, startDate, endDate, reason } = req.body;
 
   const newAbsence = new Absence({
@@ -44,7 +44,7 @@ exports.createAbsence = async (req, res) => {
 };
 
 // Update an absence by ID
-exports.updateAbsence = async (req, res) => {
+export const updateAbsence = async (req, res) => {
   try {
     const updatedAbsence = await Absence.findByIdAndUpdate(
       req.params.id,
@@ -63,7 +63,7 @@ exports.updateAbsence = async (req, res) => {
 };
 
 // Delete an absence by ID
-exports.deleteAbsence = async (req, res) => {
+export const deleteAbsence = async (req, res) => {
   try {
     const deletedAbsence = await Absence.findByIdAndDelete(req.params.id);
 

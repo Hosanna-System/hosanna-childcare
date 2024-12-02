@@ -1,12 +1,12 @@
-const express = require("express");
-const {
+import express from "express";
+import {
   createPayment,
   getAllPayments,
   getPaymentById,
   updatePaymentById,
   deletePaymentById,
-} = require("../controllers/paymentController");
-const { protect, isAdmin } = require("../middlewares/authMiddleware");
+} from "../controllers/paymentController.js";
+import { protect, isAdmin } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
@@ -25,4 +25,4 @@ router.put("/:id", protect, isAdmin, updatePaymentById);
 // Delete a payment by ID
 router.delete("/:id", protect, isAdmin, deletePaymentById);
 
-module.exports = router;
+export default router;

@@ -1,7 +1,7 @@
-const ActivityReport = require("../models/ActivityReport");
+import ActivityReport from "../models/ActivityReport.js";
 
 // Create a new activity report
-exports.createActivityReport = async (req, res) => {
+export const createActivityReport = async (req, res) => {
   try {
     const activityReport = new ActivityReport(req.body);
     await activityReport.save();
@@ -12,7 +12,7 @@ exports.createActivityReport = async (req, res) => {
 };
 
 // Get all activity reports
-exports.getAllActivityReports = async (req, res) => {
+export const getAllActivityReports = async (req, res) => {
   try {
     const activityReports = await ActivityReport.find().populate(
       "childId createdBy"
@@ -24,7 +24,7 @@ exports.getAllActivityReports = async (req, res) => {
 };
 
 // Get a single activity report by ID
-exports.getActivityReportById = async (req, res) => {
+export const getActivityReportById = async (req, res) => {
   try {
     const activityReport = await ActivityReport.findById(
       req.params.id
@@ -39,7 +39,7 @@ exports.getActivityReportById = async (req, res) => {
 };
 
 // Update an activity report by ID
-exports.updateActivityReport = async (req, res) => {
+export const updateActivityReport = async (req, res) => {
   try {
     const activityReport = await ActivityReport.findByIdAndUpdate(
       req.params.id,
@@ -56,7 +56,7 @@ exports.updateActivityReport = async (req, res) => {
 };
 
 // Delete an activity report by ID
-exports.deleteActivityReport = async (req, res) => {
+export const deleteActivityReport = async (req, res) => {
   try {
     const activityReport = await ActivityReport.findByIdAndDelete(
       req.params.id

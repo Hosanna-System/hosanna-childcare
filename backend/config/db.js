@@ -1,12 +1,10 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+import colors from "colors";
 
+// Connexion à la base de données
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-    });
+    const conn = await mongoose.connect(process.env.MONGO_URI);
     console.log(`MongoDB connecté : ${conn.connection.host}`.cyan.underline);
   } catch (error) {
     console.error(`Erreur de connexion : ${error.message}`.red.bold);
@@ -14,4 +12,4 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB;
+export default connectDB;

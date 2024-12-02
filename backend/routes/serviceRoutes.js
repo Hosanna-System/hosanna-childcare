@@ -1,11 +1,11 @@
-const express = require("express");
-const {
+import express from "express";
+import {
   getAllServices,
   getServiceById,
   createService,
   updateService,
   deleteService,
-} = require("../controllers/serviceController");
+} from "../controllers/serviceController.js";
 
 const router = express.Router();
 
@@ -24,4 +24,4 @@ router.put("/:id", updateService);
 // Delete a service
 router.delete("/:id", deleteService);
 
-module.exports = router;
+export default router;

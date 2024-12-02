@@ -1,6 +1,6 @@
 // Pour réduire la taille des réponses HTTP et améliorer les performances.
-const compression = require("compression");
+import compression from "compression";
 
 const enableCompression = compression();
 
-module.exports = enableCompression;
+export default enableCompression;

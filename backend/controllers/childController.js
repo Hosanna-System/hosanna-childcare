@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
-const Child = require('../models/Child.js');
+import mongoose from 'mongoose';
+import Child from '../models/Child.js';
 
 // Get all children
-exports.getAllChildren = async (req, res) => {
+export const getAllChildren = async (req, res) => {
     try {
         const children = await Child.find();
         res.status(200).json(children);
@@ -12,7 +12,7 @@ exports.getAllChildren = async (req, res) => {
 };
 
 // Get a single child by ID
-exports.getChildById = async (req, res) => {
+export const getChildById = async (req, res) => {
     try {
         const child = await Child.findById(req.params.id);
         if (!child) {
@@ -25,7 +25,7 @@ exports.getChildById = async (req, res) => {
 };
 
 // Create a new child
-exports.createChild = async (req, res) => {
+export const createChild = async (req, res) => {
     const child = new Child({
         firstname: req.body.firstname,
         lastname: req.body.lastname,
@@ -43,7 +43,7 @@ exports.createChild = async (req, res) => {
 };
 
 // Update a child by ID
-exports.updateChild = async (req, res) => {
+export const updateChild = async (req, res) => {
     try {
         const updatedChild = await Child.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
         if (!updatedChild) {
@@ -56,7 +56,7 @@ exports.updateChild = async (req, res) => {
 };
 
 // Delete a child by ID
-exports.deleteChild = async (req, res) => {
+export const deleteChild = async (req, res) => {
     try {
         const deletedChild = await Child.findByIdAndDelete(req.params.id);
         if (!deletedChild) {

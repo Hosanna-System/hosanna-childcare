@@ -1,18 +1,18 @@
-const express = require("express");
-const {
+import express from "express";
+import {
   getAllChildren,
   getChildById,
   createChild,
   updateChild,
   deleteChild,
-} = require("../controllers/childController");
-const {
+} from "../controllers/childController.js";
+import {
   protect,
   isSuperAdmin,
   isAdmin,
   isMonitor,
   isParent,
-} = require("../middlewares/authMiddleware");
+} from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
@@ -31,4 +31,4 @@ router.put("/:id", protect, updateChild);
 // Route pour supprimer un enfant
 router.delete("/:id", protect, isSuperAdmin || isAdmin, deleteChild);
 
-module.exports = router;
+export default router;

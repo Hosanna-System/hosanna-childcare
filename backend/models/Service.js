@@ -1,8 +1,6 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-const { Schema } = mongoose;
-
-const serviceSchema = new Schema(
+const serviceSchema = new mongoose.Schema(
   {
     id: {
       type: Number,
@@ -19,7 +17,7 @@ const serviceSchema = new Schema(
     },
     providers: [
       {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "User",
       },
     ],
@@ -36,4 +34,4 @@ const serviceSchema = new Schema(
 
 const Service = mongoose.model("Service", serviceSchema);
 
-module.exports = Service;
+export default Service;

@@ -1,14 +1,14 @@
-const express = require("express");
-const { protect, isAdmin, isMonitor } = require("../middlewares/authMiddleware");
+import express from "express";
+import { protect, isAdmin, isMonitor } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
-const {
+import {
   createActivity,
   getActivities,
   getActivityById,
   updateActivity,
   deleteActivity,
-} = require("../controllers/activityController");
+} from "../controllers/activityController.js";
 
 router
   .route("/") // Route pour obtenir toutes les activités
@@ -21,4 +21,4 @@ router
   .put(protect, isAdmin, updateActivity) // Route pour mettre à jour une activité
   .delete(protect, isAdmin, deleteActivity); // Route pour supprimer une activité
 
-module.exports = router;
+export default router;

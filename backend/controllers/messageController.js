@@ -1,7 +1,7 @@
-const Message = require("../models/Message");
+import Message from "../models/Message.js";
 
 // Create a new message
-exports.createMessage = async (req, res) => {
+export const createMessage = async (req, res) => {
     try {
         const { senderId, receiverId, content } = req.body;
         const message = new Message({ senderId, receiverId, content });
@@ -13,7 +13,7 @@ exports.createMessage = async (req, res) => {
 };
 
 // Get all messages for a user
-exports.getMessagesForUser = async (req, res) => {
+export const getMessagesForUser = async (req, res) => {
     try {
         const { userId } = req.params;
         const messages = await Message.find({
@@ -26,7 +26,7 @@ exports.getMessagesForUser = async (req, res) => {
 };
 
 // Mark a message as read
-exports.markMessageAsRead = async (req, res) => {
+export const markMessageAsRead = async (req, res) => {
     try {
         const { messageId } = req.params;
         const message = await Message.findByIdAndUpdate(
@@ -44,7 +44,7 @@ exports.markMessageAsRead = async (req, res) => {
 };
 
 // Delete a message
-exports.deleteMessage = async (req, res) => {
+export const deleteMessage = async (req, res) => {
     try {
         const { messageId } = req.params;
         const message = await Message.findByIdAndDelete(messageId);

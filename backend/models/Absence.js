@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const absenceSchema = new mongoose.Schema(
   {
@@ -16,4 +16,6 @@ const absenceSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Absence", absenceSchema);
+const Absence = mongoose.model("Absence", absenceSchema);
+
+export default Absence;

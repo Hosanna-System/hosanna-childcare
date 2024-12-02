@@ -1,16 +1,16 @@
-const express = require("express");
-const {
+import express from "express";
+import {
   createFeedback,
   getAllFeedbacks,
   getFeedbackById,
   updateFeedback,
   deleteFeedback,
-} = require("../controllers/feedbackController");
-const {
+} from "../controllers/feedbackController.js";
+import {
   protect,
   isAdmin,
   isSuperAdmin,
-} = require("../middlewares/authMiddleware");
+} from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
@@ -29,4 +29,5 @@ router.put("/:id", protect, updateFeedback);
 // Delete feedback
 router.delete("/:id", protect, isSuperAdmin, deleteFeedback);
 
-module.exports = router;
+
+export default router;

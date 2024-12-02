@@ -1,7 +1,7 @@
-const Payment = require("../models/Payment");
+import Payment from "../models/Payment.js";
 
 // Create a new payment
-exports.createPayment = async (req, res) => {
+export const createPayment = async (req, res) => {
     try {
         const payment = new Payment(req.body);
         await payment.save();
@@ -12,7 +12,7 @@ exports.createPayment = async (req, res) => {
 };
 
 // Get all payments
-exports.getAllPayments = async (req, res) => {
+export const getAllPayments = async (req, res) => {
     try {
         const payments = await Payment.find();
         res.status(200).json(payments);
@@ -22,7 +22,7 @@ exports.getAllPayments = async (req, res) => {
 };
 
 // Get a single payment by ID
-exports.getPaymentById = async (req, res) => {
+export const getPaymentById = async (req, res) => {
     try {
         const payment = await Payment.findById(req.params.id);
         if (!payment) {
@@ -35,7 +35,7 @@ exports.getPaymentById = async (req, res) => {
 };
 
 // Update a payment by ID
-exports.updatePaymentById = async (req, res) => {
+export const updatePaymentById = async (req, res) => {
     try {
         const payment = await Payment.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
@@ -51,7 +51,7 @@ exports.updatePaymentById = async (req, res) => {
 };
 
 // Delete a payment by ID
-exports.deletePaymentById = async (req, res) => {
+export const deletePaymentById = async (req, res) => {
     try {
         const payment = await Payment.findByIdAndDelete(req.params.id);
         if (!payment) {

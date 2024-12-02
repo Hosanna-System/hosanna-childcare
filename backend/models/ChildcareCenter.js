@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const childcareCenterSchema = new mongoose.Schema(
   {
@@ -19,4 +19,6 @@ const childcareCenterSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("ChildcareCenter", childcareCenterSchema);
+const ChildcareCenter = mongoose.model("ChildcareCenter", childcareCenterSchema);
+
+export default ChildcareCenter;

@@ -1,10 +1,10 @@
 // controllers/authController.js
-const crypto = require("crypto");
-const User = require("../models/User");
-const sendEmail = require("../utils/mailer");
+import crypto from "crypto";
+import User from "../models/User.js";
+import sendEmail from "../utils/mailer.js";
 
 // Register user
-exports.register = async (req, res) => {
+export const register = async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
@@ -21,7 +21,7 @@ exports.register = async (req, res) => {
 };
 
 // Login user
-exports.login = async (req, res) => {
+export const login = async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -48,7 +48,7 @@ exports.login = async (req, res) => {
 };
 
 // Reset password
-exports.forgotPassword = async (req, res) => {
+export const forgotPassword = async (req, res) => {
   const { email } = req.body;
   var _user;
 
@@ -70,7 +70,7 @@ exports.forgotPassword = async (req, res) => {
     user.resetPasswordExpire = resetPasswordExpire;
     await user.save();
 
-    const resetUrl = `http://localhost:3000/reset-password/${resetToken}`;
+    const resetUrl = `${process.env.CLIENT_URL}/reset-password/${resetToken}`;
 
     const message = `Vous avez reçu cet email car vous (ou quelqu'un d'autre) avez demandé la réinitialisation du mot de passe. \n Veuillez cliquer sur ce lien pour réinitialiser votre mot de passe: \n\n ${resetUrl}`;
 
@@ -91,7 +91,7 @@ exports.forgotPassword = async (req, res) => {
 };
 
 // Logout user
-exports.logout = async (req, res) => {
+export const logout = async (req, res) => {
   res.cookie("token", "none", {
     expires: new Date(Date.now() + 10 * 1000),
     httpOnly: true,

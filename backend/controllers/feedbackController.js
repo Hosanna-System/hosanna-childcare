@@ -1,7 +1,7 @@
-const Feedback = require("../models/Feedback");
+import Feedback from "../models/Feedback.js";
 
 // Create new feedback
-exports.createFeedback = async (req, res) => {
+export const createFeedback = async (req, res) => {
     try {
         const { userId, message, rating } = req.body;
         const feedback = new Feedback({ userId, message, rating });
@@ -13,7 +13,7 @@ exports.createFeedback = async (req, res) => {
 };
 
 // Get all feedbacks
-exports.getAllFeedbacks = async (req, res) => {
+export const getAllFeedbacks = async (req, res) => {
     try {
         const feedbacks = await Feedback.find().populate("userId", "name email");
         res.status(200).json(feedbacks);
@@ -23,7 +23,7 @@ exports.getAllFeedbacks = async (req, res) => {
 };
 
 // Get feedback by ID
-exports.getFeedbackById = async (req, res) => {
+export const getFeedbackById = async (req, res) => {
     try {
         const feedback = await Feedback.findById(req.params.id).populate("userId", "name email");
         if (!feedback) {
@@ -36,7 +36,7 @@ exports.getFeedbackById = async (req, res) => {
 };
 
 // Update feedback
-exports.updateFeedback = async (req, res) => {
+export const updateFeedback = async (req, res) => {
     try {
         const { message, rating } = req.body;
         const feedback = await Feedback.findByIdAndUpdate(
@@ -54,7 +54,7 @@ exports.updateFeedback = async (req, res) => {
 };
 
 // Delete feedback
-exports.deleteFeedback = async (req, res) => {
+export const deleteFeedback = async (req, res) => {
     try {
         const feedback = await Feedback.findByIdAndDelete(req.params.id);
         if (!feedback) {

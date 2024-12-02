@@ -1,6 +1,6 @@
 // Pour valider les données envoyées dans les requêtes 
 // à l’aide de bibliothèques comme Joi ou express-validator.
-const { body, validationResult } = require("express-validator");
+import { body, validationResult } from "express-validator";
 
 const validateUser = [
   body("name").notEmpty().withMessage("Le nom est requis"),
@@ -17,4 +17,4 @@ const validateUser = [
   },
 ];
 
-module.exports = { validateUser };
+export default { validateUser };

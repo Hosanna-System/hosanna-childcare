@@ -1,7 +1,7 @@
-const Service = require("../models/Service");
+import Service from "../models/Service.js";
 
 // Get all services
-exports.getAllServices = async (req, res) => {
+export const getAllServices = async (req, res) => {
     try {
         const services = await Service.find().populate("providers");
         res.status(200).json(services);
@@ -11,7 +11,7 @@ exports.getAllServices = async (req, res) => {
 };
 
 // Get a single service by ID
-exports.getServiceById = async (req, res) => {
+export const getServiceById = async (req, res) => {
     try {
         const service = await Service.findById(req.params.id).populate("providers");
         if (!service) {
@@ -24,7 +24,7 @@ exports.getServiceById = async (req, res) => {
 };
 
 // Create a new service
-exports.createService = async (req, res) => {
+export const createService = async (req, res) => {
     const { id, name, description, providers, reviews } = req.body;
     const newService = new Service({ id, name, description, providers, reviews });
 
@@ -37,7 +37,7 @@ exports.createService = async (req, res) => {
 };
 
 // Update an existing service
-exports.updateService = async (req, res) => {
+export const updateService = async (req, res) => {
     try {
         const updatedService = await Service.findByIdAndUpdate(req.params.id, req.body, { new: true });
         if (!updatedService) {
@@ -50,7 +50,7 @@ exports.updateService = async (req, res) => {
 };
 
 // Delete a service
-exports.deleteService = async (req, res) => {
+export const deleteService = async (req, res) => {
     try {
         const deletedService = await Service.findByIdAndDelete(req.params.id);
         if (!deletedService) {

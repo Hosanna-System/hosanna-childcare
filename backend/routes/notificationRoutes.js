@@ -1,13 +1,13 @@
-const express = require("express");
-const { protect, isAdmin } = require("../middlewares/authMiddleware");
-
-const router = express.Router();
-const {
+import express from "express";
+import { protect, isAdmin } from "../middlewares/authMiddleware.js";
+import {
   createNotification,
   getNotificationsByUser,
   markAsRead,
   deleteNotification,
-} = require("../controllers/notificationController");
+} from "../controllers/notificationController.js";
+
+const router = express.Router();
 
 // Route to create a new notification
 router.post("/", protect, createNotification);
@@ -21,4 +21,4 @@ router.put("/:id/read", protect, markAsRead);
 // Route to delete a notification
 router.delete("/:id", protect, isAdmin, deleteNotification); // Only admins can delete notifications
 
-module.exports = router;
+export default router;

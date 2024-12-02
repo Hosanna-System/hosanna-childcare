@@ -1,18 +1,18 @@
-const express = require("express");
-const {
+import express from "express";
+import {
   createSchedule,
   getAllSchedules,
   getScheduleById,
   updateScheduleById,
   deleteScheduleById,
-} = require("../controllers/scheduleController");
-const {
+} from "../controllers/scheduleController.js";
+import {
   protect,
   isAdmin,
   isSuperAdmin,
   isMonitor,
   isParent,
-} = require("../middlewares/authMiddleware");
+} from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
@@ -22,4 +22,4 @@ router.get("/:id", protect, isMonitor || isParent, getScheduleById); // Monitor 
 router.put("/:id", protect, isAdmin, updateScheduleById);
 router.delete("/:id", protect, isSuperAdmin, deleteScheduleById);
 
-module.exports = router;
+export default router;

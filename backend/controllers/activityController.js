@@ -1,7 +1,7 @@
-const Activity = require("../models/Activity");
+import Activity from "../models/Activity.js";
 
 // Create a new activity
-exports.createActivity = async (req, res) => {
+export const createActivity = async (req, res) => {
     try {
         const activity = new Activity(req.body);
         await activity.save();
@@ -12,7 +12,7 @@ exports.createActivity = async (req, res) => {
 };
 
 // Get all activities
-exports.getActivities = async (req, res) => {
+export const getActivities = async (req, res) => {
     try {
         const activities = await Activity.find().populate("createdBy");
         res.status(200).json(activities);
@@ -22,7 +22,7 @@ exports.getActivities = async (req, res) => {
 };
 
 // Get a single activity by ID
-exports.getActivityById = async (req, res) => {
+export const getActivityById = async (req, res) => {
     try {
         const activity = await Activity.findById(req.params.id).populate("createdBy");
         if (!activity) {
@@ -35,7 +35,7 @@ exports.getActivityById = async (req, res) => {
 };
 
 // Update an activity by ID
-exports.updateActivity = async (req, res) => {
+export const updateActivity = async (req, res) => {
     try {
         const activity = await Activity.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
@@ -51,7 +51,7 @@ exports.updateActivity = async (req, res) => {
 };
 
 // Delete an activity by ID
-exports.deleteActivity = async (req, res) => {
+export const deleteActivity = async (req, res) => {
     try {
         const activity = await Activity.findByIdAndDelete(req.params.id);
         if (!activity) {

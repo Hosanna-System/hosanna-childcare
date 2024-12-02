@@ -1,17 +1,17 @@
-const express = require("express");
-const {
+import express from "express";
+import {
   getAllAbsences,
   getAbsenceById,
   createAbsence,
   updateAbsence,
   deleteAbsence,
-} = require("../controllers/absenceController");
-const {
+} from "../controllers/absenceController.js";
+import {
   protect,
   isAdmin,
   isMonitor,
   isParent,
-} = require("../middlewares/authMiddleware");
+} from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
@@ -30,4 +30,4 @@ router.put("/:id", protect, isMonitor, updateAbsence);
 // Routes pour récuperer les absences d'un utilisateur
 router.delete("/:id", protect, isAdmin, deleteAbsence);
 
-module.exports = router;
+export default router;

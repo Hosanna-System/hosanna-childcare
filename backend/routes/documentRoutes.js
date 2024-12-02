@@ -1,16 +1,16 @@
-const express = require("express");
-const {
+import express from "express";
+import {
   createDocument,
   getAllDocuments,
   getDocumentById,
   updateDocumentById,
   deleteDocumentById,
-} = require("../controllers/documentController");
-const {
+} from "../controllers/documentController.js";
+import {
   protect,
   isAdmin,
   isSuperAdmin,
-} = require("../middlewares/authMiddleware");
+} from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
@@ -29,4 +29,5 @@ router.put("/:id", protect, isAdmin, updateDocumentById);
 // Route to delete a document by ID
 router.delete("/:id", protect, isSuperAdmin, deleteDocumentById);
 
-module.exports = router;
+
+export default router;

@@ -1,14 +1,15 @@
-const express = require("express");
-const router = express.Router();
-const {
+import express from "express";
+import {
   registerUser,
   loginUser,
   getUserProfile,
   updateUserProfile,
   getAllUsers,
   deleteUser,
-} = require("../controllers/userController.js");
-const { protect, isAdmin } = require("../middlewares/authMiddleware");
+} from "../controllers/userController.js";
+import { protect, isAdmin } from "../middlewares/authMiddleware.js";
+
+const router = express.Router();
 
 // Register a new user
 router.post("/register", registerUser);
@@ -28,4 +29,4 @@ router.get("/", protect, isAdmin, getAllUsers);
 // Delete user
 router.delete("/:id", protect, isAdmin, deleteUser);
 
-module.exports = router;
+export default router;

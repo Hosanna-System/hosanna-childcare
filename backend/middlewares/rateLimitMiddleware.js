@@ -1,6 +1,6 @@
 // Pour prévenir les attaques DDoS et limiter les abus d’API.
 // Définition du middleware rateLimit pour limiter le nombre de requêtes par IP
-const rateLimit = require("express-rate-limit");
+import rateLimit from "express-rate-limit";
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
@@ -8,4 +8,4 @@ const limiter = rateLimit({
   message: "Trop de requêtes, veuillez réessayer plus tard.",
 });
 
-module.exports = limiter;
+export default limiter;

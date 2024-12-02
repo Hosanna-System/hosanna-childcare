@@ -1,7 +1,7 @@
-const Notification = require("../models/Notification");
+import Notification from "../models/Notification.js";
 
 // Create a new notification
-exports.createNotification = async (req, res) => {
+export const createNotification = async (req, res) => {
     try {
         const notification = new Notification(req.body);
         await notification.save();
@@ -12,7 +12,7 @@ exports.createNotification = async (req, res) => {
 };
 
 // Get all notifications for a user
-exports.getNotificationsByUser = async (req, res) => {
+export const getNotificationsByUser = async (req, res) => {
     try {
         const notifications = await Notification.find({ userId: req.params.userId });
         res.status(200).json(notifications);
@@ -22,7 +22,7 @@ exports.getNotificationsByUser = async (req, res) => {
 };
 
 // Mark a notification as read
-exports.markAsRead = async (req, res) => {
+export const markAsRead = async (req, res) => {
     try {
         const notification = await Notification.findByIdAndUpdate(
             req.params.id,
@@ -39,7 +39,7 @@ exports.markAsRead = async (req, res) => {
 };
 
 // Delete a notification
-exports.deleteNotification = async (req, res) => {
+export const deleteNotification = async (req, res) => {
     try {
         const notification = await Notification.findByIdAndDelete(req.params.id);
         if (!notification) {

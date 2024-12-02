@@ -1,19 +1,19 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const {
+import {
   createChildcareCenter,
   getAllChildcareCenters,
   getChildcareCenterById,
   updateChildcareCenter,
   deleteChildcareCenter,
-} = require("../controllers/childcareCenterController");
-const {
+} from "../controllers/childcareCenterController.js";
+import {
   protect,
   isSuperAdmin,
   isAdmin,
   isMonitor,
   isParent,
-} = require("../middlewares/authMiddleware");
+} from "../middlewares/authMiddleware.js";
 
 // Route pour obtenir tous les centres
 router.get("/", protect, isSuperAdmin, getAllChildcareCenters);
@@ -30,4 +30,4 @@ router.put("/:id", protect, isSuperAdmin, updateChildcareCenter);
 // Route pour supprimer un centre
 router.delete("/:id", protect, isSuperAdmin, deleteChildcareCenter);
 
-module.exports = router;
+export default router;

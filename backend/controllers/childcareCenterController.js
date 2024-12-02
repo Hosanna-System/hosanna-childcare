@@ -1,5 +1,5 @@
-const ChildcareCenter = require("../models/ChildcareCenter");
-const User = require("../models/User");
+import ChildcareCenter from "../models/ChildcareCenter.js";
+import User from "../models/User.js";
 
 // Obtenir tous les centres de garde
 export const getAllChildcareCenters = async (req, res) => {

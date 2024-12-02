@@ -1,7 +1,7 @@
-const Schedule = require("../models/Schedule");
+import Schedule from "../models/Schedule.js";
 
 // Create a new schedule
-exports.createSchedule = async (req, res) => {
+export const createSchedule = async (req, res) => {
     try {
         const schedule = new Schedule(req.body);
         await schedule.save();
@@ -12,7 +12,7 @@ exports.createSchedule = async (req, res) => {
 };
 
 // Get all schedules
-exports.getAllSchedules = async (req, res) => {
+export const getAllSchedules = async (req, res) => {
     try {
         const schedules = await Schedule.find().populate("childId");
         res.status(200).json(schedules);
@@ -22,7 +22,7 @@ exports.getAllSchedules = async (req, res) => {
 };
 
 // Get a single schedule by ID
-exports.getScheduleById = async (req, res) => {
+export const getScheduleById = async (req, res) => {
     try {
         const schedule = await Schedule.findById(req.params.id).populate("childId");
         if (!schedule) {
@@ -35,7 +35,7 @@ exports.getScheduleById = async (req, res) => {
 };
 
 // Update a schedule by ID
-exports.updateScheduleById = async (req, res) => {
+export const updateScheduleById = async (req, res) => {
     try {
         const schedule = await Schedule.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
         if (!schedule) {
@@ -48,7 +48,7 @@ exports.updateScheduleById = async (req, res) => {
 };
 
 // Delete a schedule by ID
-exports.deleteScheduleById = async (req, res) => {
+export const deleteScheduleById = async (req, res) => {
     try {
         const schedule = await Schedule.findByIdAndDelete(req.params.id);
         if (!schedule) {

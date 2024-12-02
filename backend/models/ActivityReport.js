@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const activityReportSchema = new mongoose.Schema(
   {
@@ -21,4 +21,6 @@ const activityReportSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("ActivityReport", activityReportSchema);
+const ActivityReport = mongoose.model("ActivityReport", activityReportSchema);
+
+export default ActivityReport;
