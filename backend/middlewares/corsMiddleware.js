@@ -3,9 +3,10 @@
 import cors from "cors";
 
 const enableCors = cors({
-  origin: process.env.CLIENT_URL || "*", // URL de votre frontend
+  origin: "http://localhost:3000", // URL de votre frontend
   methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  //credentials: true,
 });
 
 export default enableCors;

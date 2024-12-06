@@ -18,13 +18,13 @@ router.post("/register", registerUser);
 router.post("/login", loginUser);
 
 // Get user profile
-router.get("/profile", protect, getUserProfile);
+router.get("/profile", getUserProfile);
 
 // Update user profile
 router.put("/profile", protect, updateUserProfile);
 
 // Get all users
-router.get("/", protect, isAdmin, getAllUsers);
+router.get("/", getAllUsers);
 
 // Delete user
 router.delete("/:id", protect, isAdmin, deleteUser);

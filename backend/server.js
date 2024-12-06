@@ -11,6 +11,7 @@ import enableSecurity from "./middlewares/securityMiddleware.js";
 import enableCors from "./middlewares/corsMiddleware.js";
 import enableCompression from "./middlewares/compressionMiddleware.js";
 //#region Importer les routes
+import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import childcareCenterRoutes from "./routes/childcareCenterRoutes.js";
 import childrenRoutes from "./routes/childrenRoutes.js";
@@ -50,6 +51,7 @@ connect(process.env.MONGO_URI, {
   });
 
 // Routes
+app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/childcarecenters", childcareCenterRoutes);
 app.use("/api/children", childrenRoutes);

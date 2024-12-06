@@ -3,14 +3,12 @@ import React from 'react';
 import Header from '../components/Header.tsx';
 import Footer from '../components/Footer.tsx';
 import '../assets/styles/ContactPage.css';
-import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button.tsx';
 import Modal from '../components/Modal.tsx';
 import { useState } from 'react';
 
 
 const ContactPage = () => {
-    const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
 
     return (

@@ -1,7 +1,7 @@
 // Page pour réinitialiser le mot de passe.
 // On peut entrer son adresse email pour recevoir un lien de réinitialisation.
 // On peut aussi retourner à la page de connexion.
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import ForgotPasswordForm from '../components/forms/ForgotPasswordForm.tsx';
 import Header from '../components/Header.tsx';

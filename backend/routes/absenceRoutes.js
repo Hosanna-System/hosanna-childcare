@@ -16,10 +16,10 @@ import {
 const router = express.Router();
 
 // Routes pour récuperer toutes les absences
-router.get("/", protect, isAdmin, getAllAbsences);
+router.get("/", getAllAbsences);
 
 // Routes pour récuperer une absence par son ID
-router.get("/:id", protect, isAdmin, getAbsenceById);
+router.get("/:id", getAbsenceById);
 
 // Routes pour récuperer les absences d'un utilisateur
 router.post("/", protect, isMonitor, createAbsence);

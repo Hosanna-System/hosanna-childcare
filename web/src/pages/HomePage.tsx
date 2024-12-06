@@ -1,11 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../assets/styles/HomePage.css';
-import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header.tsx';
 import Footer from '../components/Footer.tsx';
-import Loader from '../components/Loader.tsx';
 import Button from '../components/Button.tsx';
 
 const HomePage = () => {

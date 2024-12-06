@@ -1,15 +1,17 @@
 // controllers/authController.js
 import crypto from "crypto";
+import bcrypt from "bcrypt";
 import User from "../models/User.js";
 import sendEmail from "../utils/mailer.js";
 
 // Register user
 export const register = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { firstName, lastName, email, password } = req.body;
 
   try {
     const user = await User.create({
-      name,
+      firstName,
+      lastName,
       email,
       password,
     });
@@ -27,23 +29,20 @@ export const login = async (req, res) => {
   if (!email || !password) {
     return res.status(400).json({ message: "Please provide an email and password" });
   }
-
   try {
-    const user = await User.findOne({ email }).select("+password");
-
-    if (!user) {
-      return res.status(404).json({ message: "Invalid credentials" });
+    const user = await User.findOne({ email });
+    if (user && (await bcrypt.compare(password, user.password))) {
+      const token = jwt.sign(
+        { id: user._id, role: user.role },
+        process.env.JWT_SECRET,
+        { expiresIn: "1d" }
+      );
+      res.json({ token });
+    } else {
+      res.status(401).json({ error: "Invalid credentials" });
     }
-
-    const isMatch = await user.matchPasswords(password);
-
-    if (!isMatch) {
-      return res.status(404).json({ message: "Invalid credentials" });
-    }
-
-    res.status(200).json({ token: user.getSignedToken() });
-  } catch (error) {
-    res.status(500).json({ message: "Server error" });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
   }
 };
 

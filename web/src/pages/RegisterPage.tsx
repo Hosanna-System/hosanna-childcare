@@ -4,7 +4,7 @@ import Header from '../components/Header.tsx';
 import Footer from '../components/Footer.tsx';
 import RegisterForm from '../components/forms/RegisterForm.tsx';
 import '../assets/styles/RegisterPage.css';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const RegisterPage: React.FC = () => {
 
